@@ -39,10 +39,6 @@ function left() {
 
     rightBtn.addEventListener("click",()=>{
        
-       
-    
-       
-    
     })
 }
 console.log(left())
