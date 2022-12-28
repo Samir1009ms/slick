@@ -39,16 +39,7 @@ function left() {
 
     rightBtn.addEventListener("click",()=>{
        
-        if (ss === length - 1) {
-            ss = 0
-            // sildew++
-            console.log("right1", ss)
-        }
-        else {
-            ss++
-            console.log("right2", ss)
-        }
-        console.log(ss)
+       
     
        
     
@@ -61,6 +52,19 @@ leftBtn.addEventListener("click", left)
  ss = 0
 // let sildew2 = -1
 function rightbutton() {
+    
+    if (ss === length - 1) {
+        ss = 0
+        // sildew++
+        console.log("right1", ss)
+    }
+    else {
+        ss++
+        console.log("right2", ss)
+    }
+    console.log(ss)
+    
+    
     slides.forEach((slide, index) => {
         // console.log(slide, index)
         slide.style.transform = `translateX(${(index - ss) * 100}%)`
