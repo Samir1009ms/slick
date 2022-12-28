@@ -5,18 +5,23 @@ const slides = document.querySelectorAll(".slick")
 
 let sildew = slides.length - 1
 let length = slides.length
-let ss = 0
+let ss = 1
 
 
 function left() {
-    slides.forEach((slide, index) => {
-        // console.log(slide, index)
-        slide.style.transform = `translateX(${(index - ss) * 100}%)`
-    })
+    // slides.forEach((slide, index) => {
+    //     // console.log(slide, index)
+    //     slide.style.transform = `translateX(${(index - ss) * 100}%)`
+    // })
 
     if (ss === 0) {
-        ss = length - 1
-        console.log("1", ss)
+        ss = length
+        iss=ss
+        console.log("left1", ss)
+        if(ss===length){
+            ss-=1
+            console.log("left44", ss)
+        }
     }
     // else if(sildew!==0){
     // sildew--
@@ -24,35 +29,41 @@ function left() {
     // }
     else {
         ss--
-        console.log("3", ss)
+        console.log("left3", ss)
     }
     console.log(ss)
-
-
-
-}
-leftBtn.addEventListener("click", left)
-console.log(left())
-// setInterval(left,3000)
-let rightslide = 0
-// let sildew2 = -1
-function rightbutton() {
-
-
-    if (rightslide === length - 1) {
-        rightslide = 0
-        // sildew++
-        console.log("1", rightslide)
-    }
-    else {
-        rightslide++
-        console.log("2", rightslide)
-    }
-    console.log(rightslide)
-
     slides.forEach((slide, index) => {
         // console.log(slide, index)
-        slide.style.transform = `translateX(${(index - rightslide) * 100}%)`
+        slide.style.transform = `translateX(${(index - ss) * 100}%)`
+    })
+
+    rightBtn.addEventListener("click",()=>{
+       
+        if (ss === length - 1) {
+            ss = 0
+            // sildew++
+            console.log("right1", ss)
+        }
+        else {
+            ss++
+            console.log("right2", ss)
+        }
+        console.log(ss)
+    
+       
+    
+    })
+}
+console.log(left())
+leftBtn.addEventListener("click", left)
+
+// setInterval(left,3000)
+ ss = 0
+// let sildew2 = -1
+function rightbutton() {
+    slides.forEach((slide, index) => {
+        // console.log(slide, index)
+        slide.style.transform = `translateX(${(index - ss) * 100}%)`
     })
 
     // console.log(slides)
